@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.icon {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon:hover {
+  background-color: rgba(255, 255, 255, 0.219);
+}
