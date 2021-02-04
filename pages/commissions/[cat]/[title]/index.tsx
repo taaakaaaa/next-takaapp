@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 import { config, useSpring, animated } from "react-spring";
 
 import Card from "../../../../components/commissions/Card";
-import list from "../../../../public/data";
+import list, { CardItemProps } from "../../../../public/data";
 import { Title } from "../../../../styles/commissions";
 import { useOrder } from "../../../_app";
 
-function ComItem(item) {
+function ComItem(item: CardItemProps) {
   const history = useRouter();
   const props = useSpring({
     from: { transform: "translate3d(100px,0px,0px)" },
@@ -54,16 +54,16 @@ function ComItem(item) {
   );
 }
 
-ComItem.getInitialProps = ({ query }) => {
-  const { cat, title } = query;
-
-  console.log(cat, title);
+export async function getServerSideProps(context) {
+  const { cat, title } = context.query;
 
   var items = list
     .find((item1) => item1.type === cat)
     ?.content.find((item2) => item2.title === title);
 
-  return items;
-};
+  return {
+    props: items, // will be passed to the page component as props
+  };
+}
 
 export default ComItem;

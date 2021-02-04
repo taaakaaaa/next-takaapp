@@ -18,13 +18,14 @@ export const Total = styled.div`
 
   .title {
     font-size: 1.6rem;
-    letter-spacing: 2px;
+    letter-spacing: 1.6px;
     font-weight: 300;
+    text-transform: uppercase;
   }
   .price {
     font-size: 4rem;
     font-weight: 500;
-    padding: 10px 20px 80px 20px;
+    padding: 15px 20px 60px 20px;
     letter-spacing: 5px;
   }
 
@@ -34,7 +35,10 @@ export const Total = styled.div`
     color: black;
     padding: 20px;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
   }
 `;
 
@@ -42,23 +46,26 @@ interface CardPorp {
   image: string;
 }
 
-export const CartItem = styled(animated.div)`
-  margin: 25px 0px;
+export const CartItem = styled.div`
+  margin: 0px;
   background: -webkit-gradient(
       linear,
       left top,
       left bottom,
-      color-stop(0%, rgba(0, 0, 0, 0.5)),
-      color-stop(40%, rgba(0, 0, 0, 0.98))
+      color-stop(0%, rgba(0, 0, 0, 0.3)),
+      color-stop(65%, rgba(0, 0, 0, 0.95)),
+      color-stop(75%, rgba(0, 0, 0, 1))
     ),
     url(${({ image }: CardPorp) => image}) no-repeat center center;
 
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 70%;
-  height: 400px;
+  flex: 1 0 40%;
+  /* width: 400px; */
+  height: 50%;
   color: white;
 
   padding: 30px 60px;
@@ -76,6 +83,14 @@ export const CartItem = styled(animated.div)`
     font-weight: 600;
 
     margin-top: 30px;
+
+    ::after {
+      margin: 10px;
+      text-transform: uppercase;
+      font-weight: 400;
+      content: "USD";
+      font-size: 1.2rem;
+    }
   }
 
   .type {

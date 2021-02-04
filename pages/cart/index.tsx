@@ -2,26 +2,15 @@ import { useOrder } from "../_app";
 import { CartItem } from "../../styles/cart";
 import { AiOutlineClose } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
+import useTranslation from "next-translate/useTranslation";
 
 import { useTransition } from "react-spring";
 import TotalComp from "../../components/cart/TotalComp";
+import checkUserAuthentication from "../../components/shared/withAuth";
 
-export default function Cart() {
+function Cart() {
+  let { t } = useTranslation();
   const { orders, removeOrder } = useOrder();
-
-  const transitions = useTransition(orders, (item) => item.quantity, {
-    from: { transform: "translate3d(-100px,0px,0)", opacity: 0 },
-    enter: { transform: "translate3d(0,0px,0)", opacity: 1 },
-    leave: { transform: "translate3d(-100px,0px,0)", opacity: 0 },
-    trail: 50,
-    unique: true,
-  });
-
-  // const trail = useTrail(orders.length, {
-  //   to: { transform: "translate3d(0,0px,0)" },
-  //   from: { transform: "translate3d(-100px,0px,0)" },
-  //   reset: false,
-  // });
 
   return (
     <div style={{ display: "flex", width: "100%" }}>
@@ -29,20 +18,22 @@ export default function Cart() {
         style={{
           flex: 2,
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          flexDirection: "row",
+          alignItems: "flex-start",
+          marginRight: "5%",
+          flexWrap: "wrap",
         }}
       >
         {orders.length > 0 ? (
-          transitions.map(({ item, props, key }, index) => {
+          orders.map((item, index) => {
             if (item.info) {
               return (
-                <CartItem style={props} image={item.info.images[0].url}>
+                <CartItem image={item.info.images[0].url}>
                   <div className="icon" onClick={() => removeOrder(index)}>
                     <IconContext.Provider
                       value={{
                         color: "red",
-                        size: "35px",
+                        size: "45px",
                         style: {
                           padding: 10,
                         },
@@ -63,10 +54,12 @@ export default function Cart() {
             return null;
           })
         ) : (
-          <h1>No items</h1>
+          <h1>{t("cart:empty")}</h1>
         )}
       </div>
       <TotalComp />
     </div>
   );
 }
+
+export default Cart;

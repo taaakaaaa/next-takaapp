@@ -31,7 +31,31 @@ export interface portItemProps {
   url: string;
 }
 
-function Portfolio({ data }: { data: portItemProps[] }) {
+function Portfolio() {
+  let listTemp: portItemProps[] = [
+    {
+      type: "",
+      url: "",
+      title: "",
+    },
+  ];
+
+  listTemp.pop();
+
+  list.map((item) =>
+    item.content.map((row) =>
+      row.images.forEach((image) => {
+        if (image.url)
+          listTemp.push({
+            url: image.url,
+            type: item.type,
+            title: row.title ? row.title : "",
+          });
+      })
+    )
+  );
+
+  const data = shuffle(listTemp);
   const history = useRouter();
 
   const redirecCom = (cat: string, title: string) => {
@@ -67,32 +91,5 @@ function Portfolio({ data }: { data: portItemProps[] }) {
     </div>
   );
 }
-
-Portfolio.getInitialProps = () => {
-  let listTemp: portItemProps[] = [
-    {
-      type: "",
-      url: "",
-      title: "",
-    },
-  ];
-
-  listTemp.pop();
-
-  list.map((item) =>
-    item.content.map((row) =>
-      row.images.forEach((image) => {
-        if (image.url)
-          listTemp.push({
-            url: image.url,
-            type: item.type,
-            title: row.title ? row.title : "",
-          });
-      })
-    )
-  );
-
-  return { data: shuffle(listTemp) };
-};
 
 export default Portfolio;

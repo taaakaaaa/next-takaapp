@@ -27,7 +27,7 @@ export default function Card({
     afther: string
   ) => void;
 }) {
-  const { price, desc, images, features } = content;
+  const { price, desc, images, features, direction } = content;
   const [reset, setReset] = React.useState(true);
   const [step, setStep] = React.useState(0);
 
@@ -228,7 +228,10 @@ export default function Card({
               {getStep(item)}
             </animated.div>
           ))}
-          <ImageCard images={images} />
+          <ImageCard
+            direction={!direction || direction === "column"}
+            images={images}
+          />
         </div>
       </Content>
     </div>

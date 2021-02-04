@@ -248,12 +248,21 @@ export const Content = styled.section`
         font-weight: 600;
         letter-spacing: 3px;
 
-        ::after {
+        ::before {
           margin-left: 20px;
           text-transform: uppercase;
           font-weight: 400;
           content: "basic";
           font-size: 0.7rem;
+          margin-right: 10px;
+        }
+
+        ::after {
+          margin: 10px;
+          text-transform: uppercase;
+          font-weight: 400;
+          content: "USD";
+          font-size: 1.7rem;
         }
 
         color: white;
@@ -272,6 +281,10 @@ export const Content = styled.section`
   }
 `;
 
+interface ImagePorp {
+  column: boolean;
+}
+
 export const Image = styled(animated.div)`
   margin: 20px 0px;
   flex-grow: 5;
@@ -287,14 +300,14 @@ export const Image = styled(animated.div)`
 
   div {
     background-repeat: no-repeat;
-    background-size: cover !important;
-    background-position: top;
+    background-size: ${({ column }: ImagePorp) =>
+      column ? `auto 100%` : `100% auto`} !important;
+    background-position: center;
   }
 
   .image {
     border: 1px solid red;
   }
-  /* background-image: url("https://pbs.twimg.com/media/Eqeg9R3VoAIQ0O2?format=jpg&name=large"); */
 `;
 
 export const HeaderStyle = styled.header`

@@ -3,6 +3,8 @@ import React from "react";
 import Section from "../../components/commissions/Section";
 import list from "../../public/data";
 
+import checkUserAuthentication from "../../components/shared/withAuth";
+
 const Commissions = () => {
   return (
     <div>
@@ -13,4 +15,4 @@ const Commissions = () => {
   );
 };
 
-export default Commissions;
+export default checkUserAuthentication(Commissions);

@@ -1,19 +1,29 @@
 import "../styles/globals.css";
+import { v4 as uuidv4 } from "uuid";
 
 import { RoutesContainer } from "../styles/layout";
 import NavBar from "../components/layout";
 import { AppProps } from "next/dist/next-server/lib/router/router";
-import { createContext, useContext, useEffect, useState } from "react";
+
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+
 import { CardItemProps } from "../public/data";
 
-// function getdefData() {
-//   var data = localStorage.getItem("orders");
-//   if (data) {
-//     return JSON.parse(data);
-//   } else {
-//     return [];
-//   }
-// }
+function getdefData() {
+  var data = localStorage.getItem("orders");
+  if (data) {
+    return JSON.parse(data);
+  } else {
+    return [];
+  }
+}
 
 export interface cardPropsContact {
   twitter?: string;
@@ -22,21 +32,26 @@ export interface cardPropsContact {
 }
 
 export interface cardProps {
+  id?: string;
   quantity: number;
   description: string;
   info?: CardItemProps;
 }
 
-const OrderContext = createContext({
-  orders: [],
-  contactInfo: {},
-  addOrder: (newOrder: cardProps) => {},
-  removeOrder: (newOrder: number) => {},
-  total: 0,
-});
+interface globalProps {
+  orders: cardProps[];
+  contactInfo: cardPropsContact;
+  addOrder: (newOrder: cardProps) => void;
+  removeOrder: (index: number) => void;
+  cleanOrders: () => void;
+  total: number;
+  setContactInfo: Dispatch<SetStateAction<cardPropsContact>>;
+}
+
+const OrderContext = createContext<globalProps | null>(null);
 
 export const useOrder = () => {
-  return useContext(OrderContext);
+  return useContext<globalProps>(OrderContext);
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -58,6 +73,10 @@ function useProviderOrder() {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
+    setOrders(getdefData());
+  }, [setOrders]);
+
+  useEffect(() => {
     let totalTemp = 0;
 
     for (let i = 0; i < orders.length; i++) {
@@ -66,10 +85,12 @@ function useProviderOrder() {
     }
 
     setTotal(totalTemp);
+
+    localStorage.setItem("orders", JSON.stringify(orders));
   }, [orders, setOrders]);
 
   const addOrder = (newOrder: cardProps) => {
-    setOrders([...orders, newOrder]);
+    setOrders([...orders, { ...newOrder, id: uuidv4() }]);
   };
 
   const removeOrder = (index: number) => {
@@ -78,7 +99,19 @@ function useProviderOrder() {
     setOrders(newOrder);
   };
 
-  return { orders, contactInfo, addOrder, removeOrder, total };
+  const cleanOrders = () => {
+    setOrders([]);
+  };
+
+  return {
+    orders,
+    contactInfo,
+    addOrder,
+    removeOrder,
+    total,
+    setContactInfo,
+    cleanOrders,
+  };
 }
 
 export default MyApp;

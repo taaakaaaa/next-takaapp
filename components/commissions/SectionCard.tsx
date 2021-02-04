@@ -34,7 +34,10 @@ export default function SectionCard({
           SEE MORE
         </Button>
       </div>
-      <ImageCard image={item.images[1].url} className="img" />
+      <ImageCard
+        image={item.images[Math.floor(Math.random() * item.images.length)].url}
+        className="img"
+      />
       <div className="info right">
         {item.features && (
           <ul>

@@ -10,10 +10,12 @@ import { useSpring } from "react-spring";
 
 export default function ImageCard({
   images,
+  direction,
 }: {
   images: {
     url: string;
   }[];
+  direction: boolean;
 }) {
   const props = useSpring({
     from: {
@@ -28,7 +30,7 @@ export default function ImageCard({
   });
 
   return (
-    <Image style={props}>
+    <Image column={direction} style={props}>
       <SimpleImageSlider
         //@ts-ignore
         className="image"

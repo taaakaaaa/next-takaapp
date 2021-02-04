@@ -6,6 +6,7 @@ export interface ImageProps {
 
 export interface CardItemProps {
   title?: string;
+  direction?: "row" | "column";
   id?: string;
   item?: boolean;
   price: string;
@@ -22,97 +23,178 @@ export interface CardProps {
 
 const list: Array<CardProps> = [
   {
-    // tipo
-    type: "Art",
+    type: "VTuber",
     content: [
       {
-        title: "Emotes",
-        desc:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis inventore expedita at praesentium itaque voluptas nulla minus commodi. Ducimus porro est numquam beatae molestiae natus optio voluptatibus expedita esse quisquam?",
-        price: "200",
+        title: "Half Body",
+        desc: "Half Body Art ready to rig for Streaming/Recording as Vtuber",
+        price: "100",
         images: [
           {
             url:
-              "https://mir-s3-cdn-cf.behance.net/project_modules/1400/f8ea1772846697.5e56089a2adeb.png",
+              "https://cdn.discordapp.com/attachments/684813872363995156/806899476841234482/fyhaen.png",
           },
           {
             url:
-              "https://mir-s3-cdn-cf.behance.net/project_modules/1400/61cfff72846697.5e56089a39b38.png",
+              "https://cdn.discordapp.com/attachments/684813872363995156/806901002401349632/alpakapng.png",
           },
         ],
-        features: ["full idk", "thing", "wow"],
       },
       {
-        title: "teste dois",
-        desc:
-          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis inventore expedita at praesentium itaque voluptas nulla minus commodi. Ducimus porro est numquam beatae molestiae natus optio voluptatibus expedita esse quisquam?",
-        price: "200",
+        title: "Full Body",
+        desc: "Full Body Art ready to rig for Streaming/Recording as Vtuber",
+        price: "150",
         images: [
           {
             url:
-              "https://pbs.twimg.com/media/EquMT91UwAAzDNb?format=jpg&name=900x900",
+              "https://cdn.discordapp.com/attachments/353348612501012481/806991535887351808/SnowModel.png",
           },
           {
             url:
-              "https://pbs.twimg.com/media/Eq5AnCuVEAIpiN2?format=jpg&name=medium",
-          },
-        ],
-        features: ["rowow", "papatutuwawa"],
-      },
-      {
-        title: "teste nice",
-        desc:
-          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis inventore expedita at praesentium itaque voluptas nulla minus commodi. Ducimus porro est numquam beatae molestiae natus optio voluptatibus expedita esse quisquam?",
-        price: "200",
-        images: [
-          {
-            url:
-              "https://cdn.discordapp.com/attachments/353348612501012481/794377696611663893/yukipng2.png",
+              "https://cdn.discordapp.com/attachments/353348612501012481/806991549283827733/yukipng.png",
           },
           {
             url:
-              "https://cdn.discordapp.com/attachments/353348612501012481/794377696611663893/yukipng2.png",
+              "https://cdn.discordapp.com/attachments/353348612501012481/806991457264599070/kit.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/353348612501012481/806991558335397928/yumi1.png",
           },
         ],
       },
     ],
   },
   {
-    type: "VTuber",
+    type: "Art",
     content: [
       {
-        title: "Full Body",
+        title: "Bust",
         desc:
-          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis inventore expedita at praesentium itaque voluptas nulla minus commodi. Ducimus porro est numquam beatae molestiae natus optio voluptatibus expedita esse quisquam?",
-        price: "100",
+          "Bust up character of your choice, with no background or a simple one/ flat color.",
+        price: "40",
+        features: [
+          "Can have additional characters (Each one is +60% of the price).",
+          "Can have background (up to +50% of the price)",
+        ],
         images: [
           {
             url:
-              "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1369026/685057_990896.png",
+              "https://cdn.discordapp.com/attachments/806544763699724289/806963458481455124/KOkkz9S0_1.png",
           },
           {
             url:
-              "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1369026/969646_118561.png",
+              "https://cdn.discordapp.com/attachments/353348612501012481/806981513996533810/A9JK3yeC.png",
           },
           {
             url:
-              "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1369026/317566_135793.png",
+              "https://cdn.discordapp.com/attachments/684813872363995156/806964314376241192/amq1.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/684813872363995156/806964400711270441/amq2.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/684813872363995156/806964513597292564/artia2.png",
           },
         ],
       },
       {
-        title: "Half Body",
+        title: "Waist up",
         desc:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis inventore expedita at praesentium itaque voluptas nulla minus commodi. Ducimus porro est numquam beatae molestiae natus optio voluptatibus expedita esse quisquam?",
-        price: "200",
+          "Waist up (or a little more) Art with no Background, or a flat color one, of the character of your choice",
+        price: "60",
+        features: [
+          "Can have additional characters (Each one is +60% of the price).",
+          "Can have background (up to +50% of the price)",
+        ],
         images: [
           {
             url:
-              "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/1369026/112336_876930.jpeg",
+              "https://cdn.discordapp.com/attachments/684813872363995156/806950273649737798/pamy.png",
           },
           {
             url:
-              "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/1369026/712914_145875.jpeg",
+              "https://cdn.discordapp.com/attachments/684813872363995156/806950277617025115/Hime_goto.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/684813872363995156/806950283468472390/kiara.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/684813872363995156/806960341795864646/haruko.png",
+          },
+        ],
+      },
+      {
+        title: "Full Body",
+        features: [
+          "Can have additional characters (Each one is +60% of the price).",
+          "Can have background (up to +50% of the price)",
+        ],
+        desc:
+          "Full Body Art with no Background, or a flat color one of the character of your choice",
+        price: "80",
+        images: [
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/684813872363995156/806975093317566474/takemi.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/684813872363995156/806975455609225276/hayasaka.png",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    type: "Stream",
+    content: [
+      {
+        title: "Emotes",
+        desc:
+          "Emotes with the character of your choice (for Youtube, Twitch, Discord and others).",
+        price: "20",
+        images: [
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/684813872363995156/804204717386367056/Group_1_1.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/684813872363995156/804206448056860682/Group_1_2.png",
+          },
+        ],
+      },
+      {
+        title: "Overlay pack",
+        desc:
+          "Emotes with the character of your choice (for Youtube, Twitch, Discord and others).",
+        price: "60",
+        direction: "row",
+        images: [
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/353348612501012481/807005702643384330/Fubuki.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/353348612501012481/807005704300527656/Overlay_2.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/353348612501012481/807005705218293800/Risu.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/353348612501012481/807005708175802368/Desktop_-_12.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/353348612501012481/807005700223795260/Frame_5.png",
           },
         ],
       },

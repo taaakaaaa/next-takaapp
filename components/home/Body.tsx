@@ -1,23 +1,21 @@
 import React from "react";
 
 import { TwitchContainer, ContactContainer } from "../../styles/home";
-import {
-  TwitchEmbed,
-  //@ts-ignore
-} from "react-twitch-embed";
+import dynamic from "next/dynamic";
+
+//@ts-ignore
+const ReactTwitchEmbedVideo = dynamic(import("react-twitch-embed-video"), {
+  ssr: false,
+});
 
 export default function Body() {
   return (
     <>
       <TwitchContainer>
         <h1>Watch Live at Twitch</h1>
-        <TwitchEmbed
-          channel="taaakaaaa"
-          id="taaakaaaa"
-          theme="dark"
-          muted
-          onVideoPause={() => console.log(":(")}
-        />
+        {/* 
+        //@ts-ignore */}
+        <ReactTwitchEmbedVideo channel="taaakaaaa" />
       </TwitchContainer>
       <ContactContainer>
         <h1>Contact</h1>
