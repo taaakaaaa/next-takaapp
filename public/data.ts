@@ -171,8 +171,7 @@ const list: Array<CardProps> = [
       },
       {
         title: "Overlay pack",
-        desc:
-          "Emotes with the character of your choice (for Youtube, Twitch, Discord and others).",
+        desc: "Overlay with your stream style!",
         price: "60",
         direction: "row",
         images: [
