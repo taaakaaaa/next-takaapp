@@ -18,6 +18,52 @@ export const ContactContainer = styled.div`
 
     width: 700px;
     text-align: center;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    font-size: 2rem;
+    padding-bottom: 10px;
+
+    width: 700px;
+    text-align: center;
+  }
+
+  h3 {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.19rem;
+    padding-bottom: 10px;
+
+    width: 700px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  ul {
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    li {
+      cursor: pointer;
+      padding: 35px 0px;
+      width: 80%;
+      font-size: 1.05rem;
+      border-bottom: 1px solid #5a5a5a;
+      list-style: none;
+      color: white;
+
+      :hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
   }
 
   span {

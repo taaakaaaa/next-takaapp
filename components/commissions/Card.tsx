@@ -89,15 +89,29 @@ export default function Card({
                 ))}
               </ul>
             )}
-            <Button
-              onClick={() => {
-                setStep(1);
-                setTimeout(() => setReset(false), 100);
-              }}
-              className="button"
-            >
-              Order now
-            </Button>{" "}
+            <div style={{ width: "100%" }}>
+              <Button
+                onClick={() => {
+                  setStep(1);
+                  setTimeout(() => setReset(false), 100);
+                }}
+                className="button"
+              >
+                Order now
+              </Button>{" "}
+              <div
+                style={{
+                  textAlign: "center",
+                  fontSize: "0.85rem",
+                  color: "#dde3a6",
+                  textTransform: "uppercase",
+                  letterSpacing: 1,
+                }}
+                className="desc"
+              >
+                Ordering dont require payment
+              </div>
+            </div>
           </CardSection>
         );
       case 1:

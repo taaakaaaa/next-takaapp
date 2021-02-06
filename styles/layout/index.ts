@@ -6,9 +6,9 @@ export const NavBarContainer = styled.div`
   bottom: 0px;
   width: 60px;
 
-  @media (max-width: 1300px) {
+  /* @media (max-width: 1300px) {
     display: none;
-  }
+  } */
 
   background: black;
 `;
@@ -48,9 +48,9 @@ export const Title = styled.div`
 `;
 
 export const RoutesContainer = styled.div`
-  margin-left: 10vw;
+  margin-left: 14vw;
 
   @media (max-width: 1300px) {
-    margin-left: 0px;
+    margin-left: 100px;
   }
 `;

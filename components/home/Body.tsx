@@ -28,7 +28,13 @@ export default function Body() {
             alt="Twitter"
           />
 
-          <img src="/Instagram.png" alt="Instagram" />
+          <img
+            onClick={() =>
+              window.open("https://www.instagram.com/_taaakaaaa/", "_blank")
+            }
+            src="/Instagram.png"
+            alt="Instagram"
+          />
         </div>
       </ContactContainer>
     </>

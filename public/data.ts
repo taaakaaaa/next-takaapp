@@ -170,11 +170,19 @@ const list: Array<CardProps> = [
         ],
       },
       {
-        title: "Overlay pack",
-        desc: "Overlay with your stream style!",
-        price: "60",
+        title: "Overlay",
+        desc: "Custom overlay with your stream style!",
+        features: [
+          "Can be animated (+50% on the price).",
+          "The price is relative to a single overlay, if for exemple you need a starting and a chatting overlay order 2 items",
+        ],
+        price: "10",
         direction: "row",
         images: [
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807723544393285632/Desktop_-_1.png",
+          },
           {
             url:
               "https://cdn.discordapp.com/attachments/353348612501012481/807005702643384330/Fubuki.png",
@@ -194,6 +202,68 @@ const list: Array<CardProps> = [
           {
             url:
               "https://cdn.discordapp.com/attachments/353348612501012481/807005700223795260/Frame_5.png",
+          },
+        ],
+      },
+      {
+        title: "Overlay Pack",
+        desc: "Custom overlay pack with 4 items!",
+        features: ["Can be animated (+50% on the price)."],
+        price: "30",
+        direction: "row",
+        images: [
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807728506083606528/Desktop_-_4.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807729065003057172/Frame_2.png",
+          },
+        ],
+      },
+      {
+        title: "Alert",
+        desc: "Animated alert for follows, subs, donations etc",
+        price: "20",
+        direction: "row",
+        images: [
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807726864243621908/cute.gif",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807726055132758036/alert2.gif",
+          },
+        ],
+      },
+      {
+        title: "Panels",
+        desc: "Share information with custom panels!",
+        price: "4",
+        direction: "row",
+        features: ["Can be animated (+50% on the price)."],
+        images: [
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807734606332952586/Group_3.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807734607557689364/Group_4.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807734608324984832/Group_5.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807734609500176404/Group_1.png",
+          },
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/670725281270726687/807734610372853811/Group_2.png",
           },
         ],
       },

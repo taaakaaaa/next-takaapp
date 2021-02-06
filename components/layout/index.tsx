@@ -5,6 +5,7 @@ import {
   AiOutlineFileImage,
   AiFillShopping,
   AiFillSnippets,
+  AiFillLayout,
 } from "react-icons/ai";
 
 import { NavBarContainer, Title, Icons } from "../../styles/layout";
@@ -38,6 +39,12 @@ export default function Navbar() {
       size: 160,
       label: "cart",
       link: "/cart",
+    },
+    {
+      icon: <AiFillLayout />,
+      size: 160,
+      label: "dev",
+      link: "/dev",
     },
   ];
 

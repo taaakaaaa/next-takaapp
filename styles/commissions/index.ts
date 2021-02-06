@@ -26,6 +26,7 @@ export const SectionContainer = styled.div`
 
 export const CardItem = styled.div`
   width: 100%;
+  max-width: 100vw;
   display: flex;
   position: relative;
   border-bottom: 1px solid black;
@@ -33,9 +34,19 @@ export const CardItem = styled.div`
   height: 60vh;
   transition: all 0.5s ease;
 
-  :hover {
-    .img {
-      transform: scale(1.21);
+  @media (min-width: 1300px) {
+    :hover {
+      .img {
+        transform: scale(1.21);
+      }
+    }
+  }
+
+  @media (max-width: 1300px) {
+    :hover {
+      .img {
+        transform: translateX(-10%);
+      }
     }
   }
 
@@ -53,17 +64,25 @@ export const CardItem = styled.div`
   }
 
   .left {
+    @media (max-width: 1300px) {
+      flex: 3;
+    }
+    text-align: center;
     flex: 4;
     height: 100%;
     align-items: center;
     justify-content: space-evenly;
   }
   .right {
+    @media (max-width: 1300px) {
+      display: none !important;
+    }
     flex: 2;
     height: 100%;
     align-items: center;
     justify-content: center;
   }
+
   .info {
     background: black;
     color: white;
@@ -73,7 +92,8 @@ export const CardItem = styled.div`
     /* justify-content: flex-start; */
     /* align-items: center; */
     .title {
-      font-size: 3.5rem;
+      font-size: clamp(1.6rem, 2.5vw, 3.5rem);
+      padding: 0px 20px;
       margin: 0px;
       text-transform: uppercase;
       letter-spacing: 16px;

@@ -59,10 +59,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <OrderContext.Provider value={order}>
+      <NavBar />
       <RoutesContainer>
         <Component {...pageProps} />
       </RoutesContainer>
-      <NavBar />
     </OrderContext.Provider>
   );
 }
