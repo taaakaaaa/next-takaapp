@@ -46,7 +46,13 @@ function Cart() {
                   <div className="price">
                     {Number(item.info.price) * item.quantity}
                   </div>
-                  <div className="description">{item.description}</div>
+                  {item.description && (
+                    <div className="description">{item.description}</div>
+                  )}
+
+                  {item.quantity && (
+                    <div className="description">Quantity: {item.quantity}</div>
+                  )}
                   <div className="type">{item.info.title}</div>
                 </CartItem>
               );

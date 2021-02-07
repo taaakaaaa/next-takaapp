@@ -67,7 +67,6 @@ export const HeaderStyle = styled.header`
   /* width: 100vw; */
   height: 100vh;
   max-width: 100vw;
-
   display: flex;
   /* flex-direction: column; */
   align-items: center;
@@ -115,6 +114,7 @@ export const HeaderStyle = styled.header`
     }
 
     .link {
+      transition: 0.2s all;
       text-align: center;
       text-transform: uppercase;
       padding: 20px;
@@ -128,6 +128,11 @@ export const HeaderStyle = styled.header`
       font-size: 1.3rem;
       font-weight: 500;
       letter-spacing: 10px;
+
+      :hover {
+        background: rgba(0, 0, 0, 0.9);
+        transform: translateY(-2px);
+      }
     }
   }
 `;
@@ -163,20 +168,23 @@ export const Card = styled.div`
   background-image: ${({ image }: CardPorp) => `url("${image}");`};
 
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
+  background-size: contain;
+  background-position: center;
+  background-color: #fff2f2;
 
   position: relative;
 
   label {
+    cursor: pointer;
     color: white;
     font-size: 1.6rem;
     letter-spacing: 5px;
+    transition: 0.2s all;
 
-    left: 20px;
+    left: -20px;
     right: 20px;
-    bottom: 10px;
-    height: 60px;
+    bottom: 20px;
+    height: 80px;
 
     position: absolute;
     background: black;
@@ -184,5 +192,9 @@ export const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    :hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
   }
 `;

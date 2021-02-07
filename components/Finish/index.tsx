@@ -39,7 +39,7 @@ export default function Finish() {
         </>
       ) : (
         <>
-          <h1>Order placed, we will enter in contact with you.</h1>
+          <h1>Order placed! we will enter in contact with you.</h1>
 
           <Button
             style={{ width: 700 }}

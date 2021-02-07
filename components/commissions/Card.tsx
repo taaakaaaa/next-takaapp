@@ -105,7 +105,7 @@ export default function Card({
                   fontSize: "0.85rem",
                   color: "#dde3a6",
                   textTransform: "uppercase",
-                  letterSpacing: 1,
+                  letterSpacing: 2,
                 }}
                 className="desc"
               >

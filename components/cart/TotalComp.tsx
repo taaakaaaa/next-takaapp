@@ -20,6 +20,19 @@ export default function TotalComp() {
       >
         {t("cart:next")}
       </button>
+      <br />
+      <div
+        style={{
+          textAlign: "center",
+          fontSize: "0.85rem",
+          color: "#dde3a6",
+          textTransform: "uppercase",
+          letterSpacing: 2,
+        }}
+        className="desc"
+      >
+        Ordering dont require payment
+      </div>
     </Total>
   );
 }

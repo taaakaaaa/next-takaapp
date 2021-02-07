@@ -27,6 +27,14 @@ export const Total = styled.div`
     font-weight: 500;
     padding: 15px 20px 60px 20px;
     letter-spacing: 5px;
+
+    ::after {
+      margin: 10px;
+      text-transform: uppercase;
+      font-weight: 400;
+      content: "USD";
+      font-size: 1.2rem;
+    }
   }
 
   button {

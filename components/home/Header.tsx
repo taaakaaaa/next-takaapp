@@ -5,7 +5,7 @@ import { HeaderStyle, CardContainer, Card } from "../../styles/home";
 import list from "../../public/data";
 import { portItemProps } from "../../pages/portfolio";
 
-export function shuffle(array: any) {
+export function shuffle(array: any): portItemProps[] {
   var currentIndex = array.length,
     temporaryValue,
     randomIndex;
@@ -74,15 +74,22 @@ export default function Header() {
               Do One Now
             </h2>
           </div>
-          <Link href="/commissions">
+          <Link href="/commissions" prefetch>
             <a className="link" href="">
-              Start
+              See more
             </a>
           </Link>
         </div>
         <CardContainer>
           <Card image={data[0].url}>
-            <label>{data[0].title}</label>
+            <Link
+              href={`/commissions/${data[0].type}/${data[0].title}`}
+              prefetch
+            >
+              <a href="">
+                <label>{data[0].title}</label>
+              </a>
+            </Link>
           </Card>
         </CardContainer>
       </HeaderStyle>
