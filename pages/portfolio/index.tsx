@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Header, Content, Image } from "../../styles/portfolio";
 
 // @ts-ignore
@@ -32,6 +32,7 @@ export interface portItemProps {
 }
 
 function Portfolio() {
+  const history = useRouter();
   let listTemp: portItemProps[] = [
     {
       type: "",
@@ -43,20 +44,21 @@ function Portfolio() {
   listTemp.pop();
 
   list.map((item) =>
-    item.content.map((row) =>
-      row.images.forEach((image) => {
-        if (image.url)
-          listTemp.push({
-            url: image.url,
-            type: item.type,
-            title: row.title ? row.title : "",
-          });
-      })
-    )
+    item.content.map((row) => {
+      if (!history.query.filter || history.query.filter === row.title) {
+        return row.images.forEach((image) => {
+          if (image.url)
+            listTemp.push({
+              url: image.url,
+              type: item.type,
+              title: row.title ? row.title : "",
+            });
+        });
+      }
+    })
   );
 
   const data = shuffle(listTemp);
-  const history = useRouter();
 
   const redirecCom = (cat: string, title: string) => {
     history.push(`/commissions/${cat}/${title}`);
