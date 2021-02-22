@@ -129,7 +129,7 @@ const list: Array<CardProps> = [
         ],
       },
       {
-        title: "Full Body",
+        title: "Full",
         features: [
           "Can have additional characters (Each one is +60% of the price).",
           "Can have background (up to +50% of the price)",
