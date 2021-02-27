@@ -98,6 +98,7 @@ const list: Array<CardProps> = [
             url:
               "https://cdn.discordapp.com/attachments/684813872363995156/806964513597292564/artia2.png",
           },
+         
         ],
       },
       {
@@ -138,6 +139,10 @@ const list: Array<CardProps> = [
           "Full Body Art with no Background, or a flat color one of the character of your choice",
         price: "80",
         images: [
+          {
+            url:
+              "https://cdn.discordapp.com/attachments/684813872363995156/815319595173806110/daxlian.png",
+          },
           {
             url:
               "https://cdn.discordapp.com/attachments/684813872363995156/806975093317566474/takemi.png",
